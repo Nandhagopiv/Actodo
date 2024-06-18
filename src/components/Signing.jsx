@@ -24,7 +24,6 @@ function Signing(props) {
             } else {
                 setmsg("You can sign up here:)")
                 setmsgCol(false)
-                setUserFound(false)
             }
 
             if (userfound === true) {
