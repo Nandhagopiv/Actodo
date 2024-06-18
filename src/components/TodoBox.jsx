@@ -89,7 +89,7 @@ function TodoBox() {
                 {
                     userList.map((data, index) => {
                         return <div className="flex justify-between">
-                            <p style={{ wordBreak: "break-word" }} className="py-3 w-8/12 text-xl">{index + 1}. {data.task}</p> <div><button onClick={() => handleEdit(data.id)} className=" bg-black m-2 p-1 w-14 border h-10 border-none rounded-md text-white">Edit</button> <button onClick={() => handleDelete(data.id)} className=" bg-black m-2 p-1 w-14 border h-10 border-none rounded-md text-white">Delete</button></div>
+                            <p style={{ wordBreak: "break-word" }} className="py-3 w-10/12 text-xl">{index + 1}. {data.task}</p> <div><button onClick={() => handleEdit(data.id)} className=" bg-black m-2 p-1 w-14 border h-10 border-none rounded-md text-white">Edit</button> <button onClick={() => handleDelete(data.id)} className=" bg-black m-2 p-1 w-14 border h-10 border-none rounded-md text-white">Delete</button></div>
                         </div>
                     })
                 }
