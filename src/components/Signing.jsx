@@ -8,7 +8,6 @@ function Signing(props) {
     const [eCrtPassword, seteCrtPassword] = useState('')
     const [msg, setmsg] = useState("You can sign up here:)")
     const [msgCol, setmsgCol] = useState(false)
-    const [userFound,setUserFound] = useState(false)
     const Navigate = useNavigate()
 
     function handleUsername(e) {
@@ -19,18 +18,16 @@ function Signing(props) {
         let userfound = false
         props.users.forEach((data) => {
             if (data.username === eUsername) {
-                setUserFound(true)
-                userfound=true
-            } else {
-                setmsg("You can sign up here:)")
-                setmsgCol(false)
-            }
-
-            if (userfound === true) {
+                userfound = true
                 setmsg("User already Existed")
                 setmsgCol(true)
             }
         })
+
+        if (userfound === false) {
+            setmsg("You can sign up here:)")
+            setmsgCol(false)
+        }
     }
 
     function handlePassword(e) {
@@ -43,7 +40,14 @@ function Signing(props) {
 
     function addUsers(e) {
         e.preventDefault()
-        if (userFound === true) {
+        let userf = false
+        props.users.forEach((data)=>{
+            if (data.username === eUsername) {
+                userf = true
+            }
+        })
+
+        if (userf === true) {
             alert("User already existed")
         } else {
             if (ePassword !== eCrtPassword) {
@@ -53,7 +57,6 @@ function Signing(props) {
                 props.setUsers([...props.users, { username: eUsername, password: ePassword }])
                 Navigate('/')
                 alert("Sucessfully Created")
-                console.log(userFound);
             }
         }
     }
