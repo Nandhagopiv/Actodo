@@ -23,7 +23,7 @@ function Signing(props) {
     return (
         <div>
             <div className="flex justify-center my-40">
-                <div className="flex flex-col gap-5 md:w-4/12">
+                <div className="flex flex-col gap-5 w-3/4 md:w-4/12">
                     <h1 className="text-3xl font-bold">Hey Hello</h1>
                     <p className="text-xl">You can sign up here:)</p>
                     <div className="flex gap-5 flex-col">

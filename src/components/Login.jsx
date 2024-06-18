@@ -35,7 +35,7 @@ function Login(props) {
     return (
     <div className="flex justify-center my-40">
         
-        <div className="flex flex-col gap-4 md:w-4/12">
+        <div className="flex flex-col gap-4 m-10 w-3/4 md:w-4/12">
             <h1 className="text-3xl font-bold">Hey Hello</h1>
             {
                 verifyUser? <p className="text-xl">I help you manage your daily activities:)</p> : <p className="text-xl text-red-600">You are a New User. Please Signup before you Login</p>
